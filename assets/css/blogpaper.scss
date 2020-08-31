@@ -21,9 +21,10 @@
   --color-metadata-rgb: #{to-rgb(#666)};
   --color-link-underline-opacity: 0.5;
 
-  --font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", Times, serif;
-  --font-family-metadata: system-font;
-  --font-size: 2rem;
+  // --font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", Times, serif;
+  // --font-family-metadata: system-font;
+  --font-family: "Noto Sans", "Noto Color Emoji";
+  --font-size: 1.5rem;
   --font-line-height: 2;
 
   --inline-list__item-margin-left: 2rem;
@@ -47,6 +48,8 @@
   --header--main-color-text-rgb: #{to-rgb(#fff)};
   --header--main-color-background: #333;
   --header--main__banner-above-background: radial-gradient(at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.4));
+  --header--main__title-font-family: "Berkshire Swash";
+  --header--main__title-font-size: 6rem;
 
   --content-max-width: 75rem;
 
@@ -71,12 +74,33 @@
   --footer-margin-top: var(--header--main-margin-bottom);
 }
 
-// From https://github.com/jonathantneal/system-font-css
+// // From https://github.com/jonathantneal/system-font-css
+// @font-face {
+//   font-family: system-font;
+//   font-style: normal;
+//   font-weight: 400;
+//   src: local(".SFNSText-Regular"), local(".HelveticaNeueDeskInterface-Regular"), local(".LucidaGrandeUI"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"), local("DroidSans"), local("Tahoma");
+// }
+
 @font-face {
-  font-family: system-font;
+  font-family: 'Berkshire Swash';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Berkshire Swash'), url('fonts/BerkshireSwash-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Noto Color Emoji';
   font-style: normal;
   font-weight: 400;
-  src: local(".SFNSText-Regular"), local(".HelveticaNeueDeskInterface-Regular"), local(".LucidaGrandeUI"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"), local("DroidSans"), local("Tahoma");
+  src: local('Noto Color Emoji'), url('fonts/NotoColorEmoji.ttf');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), url('fonts/NotoSans-Regular.ttf');
 }
 
 /* Page */
@@ -194,6 +218,7 @@ a {
   &__title {
     margin: var(--header__title-margin);
     line-height: var(--header__title-line-height);
+    font-family: var(--header__title-font-family);
   }
 
   &__metadata {
@@ -259,6 +284,12 @@ a {
 
   > *:not(.banner) {
     position: relative;
+  }
+
+
+  .header__title {
+    font-family: var(--header--main__title-font-family);
+    font-size: var(--header--main__title-font-size)
   }
 
   .metadata {
