@@ -14,7 +14,7 @@
 }
 
 :root {
-  --color-background: #fff;
+  --color-background: #fef8cd;
   --color-text: #333;
   --color-text-rgb: #{to-rgb(#333)};
   --color-metadata: #666;
@@ -42,7 +42,7 @@
   --header__banner__figcaption_opacity: 0.7;
 
   --header--main-max-width: 75rem;
-  --header--main-margin-bottom: 3rem;
+  --header--main-margin-bottom: 2rem;
   --header--main-padding-bottom: 4rem;
   --header--main-color-text: #fff;
   --header--main-color-text-rgb: #{to-rgb(#fff)};
@@ -51,7 +51,9 @@
   --header--main__title-font-family: "Berkshire Swash";
   --header--main__title-font-size: 6rem;
 
-  --content-max-width: 75rem;
+  --content-max-width: 80rem;
+
+  --post-background: #fff;
 
   --summary-margin-bottom: calc(3 * var(--header--main-margin-bottom));
   --summary__banner-max-height: 30rem;
@@ -299,6 +301,13 @@ a {
 
 /* Posts list */
 
+.list {
+  .container .content {
+    background: var(--post-background);
+    padding: 2rem;
+  }
+}
+
 .summary {
   margin-bottom: var(--summary-margin-bottom);
 
@@ -318,8 +327,10 @@ a {
 }
 
 /* Post */
-
 .post .content {
+  background: var(--post-background);
+  padding-top: 0.1rem;
+  padding-left: 2rem;
 
   figure {
     margin: var(--figure-margin);
