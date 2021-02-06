@@ -315,6 +315,11 @@ a {
     margin-bottom: var(--summary__banner-margin-bottom);
     max-height: var(--summary__banner-max-height);
     overflow: hidden;
+
+    img {
+      height: -webkit-fill-available;
+      object-fit: cover;
+    }
   }
 
   &__content {
