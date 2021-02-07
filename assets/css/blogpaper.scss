@@ -318,6 +318,7 @@ a {
 
     img {
       height: -webkit-fill-available;
+      max-height: var(--summary__banner-max-height);
       object-fit: cover;
     }
   }
